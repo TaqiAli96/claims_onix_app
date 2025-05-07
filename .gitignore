@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+node_modules/
+dist/
+.vscode/
+.flowbite-react/
+.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
