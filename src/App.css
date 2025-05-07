@@ -1,0 +1,61 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+.font-inter-400 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+.font-inter-300 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+.font-inter-500 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.font-inter-600 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.hero-bg {
+  background-image: url("/assets/pngs/HeroDesktopImage.png");
+}
+
+@media (max-width: 767px) {
+  .hero-bg {
+    background-image: url("/images/HeroMobImage.png");
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 2s ease-in-out infinite; /* Infinite loop */
+  opacity: 0; /* Start invisible */
+}
+
+@media (max-width: 850px) {
+  .hide-on-mobile-850 {
+    display: none !important;
+  }
+
+  .show-on-mobile-850 {
+    display: flex !important;
+  }
+}
+
