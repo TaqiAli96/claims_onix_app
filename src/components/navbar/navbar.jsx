@@ -5,6 +5,7 @@ import navigationItems from "../../constants/navitems";
 import HamburgerIcon from "../../assets/svgs/hamburgerIcon";
 import AppLogo from "../../assets/pngs/AppLogo.png";
 import MobileNavbar from "./mobNavBar";
+import { Link } from 'react-scroll';
 
 const Navbar = ({ onOpenModal }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,23 +37,24 @@ const Navbar = ({ onOpenModal }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="w-44 animate-fade-in">
-            <a href="/" aria-label="Home">
-              <img
-                src={AppLogo}
-                alt="ClaimsOnix Logo"
-                className="w-full h-full"
-                width="176"
-                height="64"
-                loading="eager"
-              />
-            </a>
+            <img
+              src={AppLogo}
+              alt="ClaimsOnix Logo"
+              className="w-full h-full"
+              width="176"
+              height="64"
+              loading="eager"
+            />
           </div>
 
           <div className="hide-on-mobile-950 flex items-center justify-center space-x-6 flex-1">
             {navigationItems?.map((item, index) => (
-              <a
-                key={index}
-                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+              <Link
+                key={item.to}
+                to={item.to}
+                smooth={true}
+                duration={500}
+                
                 className="relative group text-black text-xs lg:text-sm xl:text-base px-2 py-2 font-inter-400 transition-colors duration-300 hover:text-[#348000] whitespace-nowrap"
                 style={{
                   animation: `fadeInDown 0.5s ease-out forwards`,
@@ -60,9 +62,9 @@ const Navbar = ({ onOpenModal }) => {
                   opacity: 0
                 }}
               >
-                {item}
+                {item.name}
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#348000] origin-right scale-x-0 transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -97,7 +99,7 @@ const Navbar = ({ onOpenModal }) => {
         </div>
       </div>
 
-      <MobileNavbar isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />
+      <MobileNavbar isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} onClick={onOpenModal} />
 
       <style>
         {`

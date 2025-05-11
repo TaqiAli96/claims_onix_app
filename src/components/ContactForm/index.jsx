@@ -90,11 +90,12 @@ const ContactForm = ({ onSubmit, className = '' }) => {
     return (
         <form
             onSubmit={handleSubmit}
-            className={`w-full bg-white rounded-2xl flex flex-col gap-6 md:gap-8 p-4 md:p-6 lg:p-10 transition-colors duration-300 ${isFormFocused ? 'border-[#276100]' : 'border-[#CBCBCB]'} ${className}`}
+            className={`w-full bg-white rounded-2xl flex flex-col gap-8 p-6 md:p-10 transition-colors duration-300 ${isFormFocused ? 'border-[#276100]' : 'border-[#CBCBCB]'} ${className}`}
+
         >
             <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
-                <h2 className="text-lg md:text-xl font-inter-400 mb-3 md:mb-4">Your Contact Details</h2>
-                <div className="flex flex-col gap-3 md:gap-4 w-full">
+                <h2 className="text-xl font-inter-400 mb-4">Your Contact Details</h2>
+                <div className="flex flex-col gap-4 w-full">
                     <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
                         <FloatingLabelInput
                             label="Full Name"
@@ -127,10 +128,10 @@ const ContactForm = ({ onSubmit, className = '' }) => {
                     onBlur={handleFieldBlur}
                 />
             </div>
-            <div className={`flex justify-center md:justify-start mt-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.8s' }}>
+            <div className={`flex justify-start mt-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.8s' }}>
                 <button
                     type="submit"
-                    className="w-full md:w-auto bg-[#276100] hover:bg-[#348000] text-white font-inter-400 rounded-xl px-6 md:px-10 py-3 text-base md:text-lg transition-all duration-200 shadow-md hover:scale-105 focus:scale-105"
+                    className="bg-[#276100] hover:bg-[#348000] text-white font-inter-400 rounded-xl px-10 py-3 text-lg transition-all duration-200 shadow-md hover:scale-105 focus:scale-105"
                 >
                     Submit
                 </button>

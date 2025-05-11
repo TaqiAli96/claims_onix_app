@@ -8,14 +8,13 @@ import CertificationSection from "./components/certificationSection";
 import AboutUs from "./sections/aboutUs";
 import ClaimOnix from "./sections/claimOnix";
 import Services from "./sections/services";
-import Schedule from "./sections/schedule";
 import Accordion from "./components/accordion";
 import ContactUs from "./sections/contactUS";
 import WrapperContainer from "./components/WrapperContainer";
 import Modal from "./components/Modal";
 import { useState } from "react";
 import ContactForm from './components/ContactForm';
-
+import { Element } from 'react-scroll';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -38,33 +37,34 @@ function App() {
 
       <Container>
         <TopBar />
-        <HeroSection onOpenModal={handleOpenModal} />
 
-        <section className="my-5">
-          <CertificationSection />
-        </section>
+        <Element name="home">
+          <HeroSection onOpenModal={handleOpenModal} />
+        </Element>
 
-        <section className="">
-          <AboutUs />
-        </section>
 
-        <section className="my-5">
-          <ClaimOnix />
-        </section>
+        <Element name="about">
+          <section><AboutUs /></section>
+        </Element>
 
-        <section className="my-5">
-          <Services />
-        </section>
+        <Element name="why choose us">
+          <section><ClaimOnix /></section>
+        </Element>
 
-        <section className="my-10">
-          <Schedule />
-        </section>
+        <Element name="services">
+          <section><Services /></section>
+        </Element>
 
-        <Accordion items={faqItems} />
+        <Element name="contact">
+          <section><ContactUs /></section>
+        </Element>
 
-        <section className="">
-          <ContactUs />
-        </section>
+        <Element name="faqs">
+          <section>   <Accordion items={faqItems} /></section>
+        </Element>
+
+
+
 
         <section className="mb-10">
           <Footer />

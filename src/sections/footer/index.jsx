@@ -32,13 +32,13 @@ const Footer = () => (
             </div>
             {/* Navigation */}
             <nav className="flex flex-col md:flex-row flex-wrap justify-center gap-5 md:gap-6 text-sm md:text-sm lg:text-base font-inter-400">
-                {navigationItems.map((link, i) => (
+                {navigationItems.map((item, i) => (
                     <a
                         key={i}
                         href="#"
                         className="hover:text-[#276100] transition-all duration-300 transform hover:-translate-y-1"
                     >
-                        {link}
+                        {item.name}
                     </a>
                 ))}
             </nav>

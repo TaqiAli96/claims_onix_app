@@ -22,7 +22,7 @@ const CertificationSection = () => {
 
   return (
     <section
-      className="flex flex-col justify-center items-center py-10 gap-4 w-full overflow-hidden"
+      className="flex flex-col justify-center items-center py-15 gap-4 w-full overflow-hidden"
       aria-label="Certifications and Trust Indicators"
     >
       <p className={`text-center w-full font-inter-300 text-lg transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

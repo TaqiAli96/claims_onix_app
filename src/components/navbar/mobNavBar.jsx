@@ -3,9 +3,10 @@ import { CloseIcon } from "flowbite-react";
 import ActionButton from "../actionButton";
 import RightArrow from "../../assets/svgs/rightArrow";
 import navigationItems from "../../constants/navitems";
+import { Link } from "react-scroll";
 
 
-const MobileNavbar = ({ isOpen, onClose }) => {
+const MobileNavbar = ({ onClick, isOpen, onClose }) => {
   // Lock/Unlock body scroll based on mobile menu state
   useEffect(() => {
     if (isOpen) {
@@ -25,10 +26,9 @@ const MobileNavbar = ({ isOpen, onClose }) => {
   return (
     <div
       className={`fixed top-0 left-0 w-screen h-screen z-50 bg-white transform transition-all duration-500 ease-in-out
-        ${
-          isOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0 pointer-events-none"
+        ${isOpen
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0 pointer-events-none"
         }
         lg:hidden`}
     >
@@ -42,18 +42,26 @@ const MobileNavbar = ({ isOpen, onClose }) => {
       {/* Navigation Items */}
       <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         {navigationItems?.map((item, index) => (
-          <a
-            key={index}
-            href="#"
-            className="relative group text-black block px-5 py-5 rounded-md text-base font-medium focus:outline-none"
+
+          <Link
+            key={item.to}
+            to={item.to}
+            onClick={onClose}
+            smooth={true}
+            duration={500}
+            className="relative group text-black block px-5 py-5 rounded-md text-base font-medium focus:outline-none" style={{
+              animation: `fadeInDown 0.5s ease-out forwards`,
+              animationDelay: `${index * 100}ms`,
+              opacity: 0
+            }}
           >
-            {item}
-            {/* Animated green bottom border */}
+            {item.name}
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#348000] origin-right scale-x-0 transition-transform duration-300 group-focus:scale-x-100 group-focus:origin-left group-hover:scale-x-100 group-hover:origin-left"></span>
-          </a>
+          </Link>
+
         ))}
         <div className="flex justify-center w-full">
-          <ActionButton content={"Contact Us"} Icon={<RightArrow />} />
+          <ActionButton content={"Contact Us"} Icon={<RightArrow />} onClick={onClick} />
         </div>
       </div>
     </div>

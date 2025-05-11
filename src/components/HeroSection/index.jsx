@@ -35,6 +35,8 @@ const HeroSection = ({
         backgroundImage: `url(${isMobile ? mobileImage : desktopImage})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: `${isMobile ? "center top 87%" : "center"}`,
+        border:"1px solid white"
+
       }}
       role="banner"
       aria-label="Hero section"
