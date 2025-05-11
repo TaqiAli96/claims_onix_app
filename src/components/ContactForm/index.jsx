@@ -128,12 +128,18 @@ const ContactForm = ({ onSubmit, className = '' }) => {
                     onBlur={handleFieldBlur}
                 />
             </div>
-            <div className={`flex justify-start mt-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.8s' }}>
+            <div className={`flex gap-2 mt-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.8s' }}>
                 <button
                     type="submit"
                     className="bg-[#276100] hover:bg-[#348000] text-white font-inter-400 rounded-xl px-10 py-3 text-lg transition-all duration-200 shadow-md hover:scale-105 focus:scale-105"
                 >
                     Submit
+                </button>
+                <button
+                    type="submit"
+                    className="bg-red-600 hover:bg-red-700 text-white font-inter-400 rounded-xl px-10 py-3 text-lg transition-all duration-200 shadow-md hover:scale-105 focus:scale-105"
+                >
+                    Cancel
                 </button>
             </div>
         </form>

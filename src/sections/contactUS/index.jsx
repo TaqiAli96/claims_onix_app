@@ -75,6 +75,7 @@ const ContactUs = () => {
     const [isFormFocused, setIsFormFocused] = useState(false);
     const handleFieldFocus = () => setIsFormFocused(true);
     const handleFieldBlur = () => setIsFormFocused(false);
+
     useEffect(() => {
         const timer = setTimeout(() => setIsVisible(true), 100);
         return () => clearTimeout(timer);
