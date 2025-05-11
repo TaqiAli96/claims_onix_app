@@ -70,7 +70,7 @@ const FloatingLabelTextarea = ({ label, onFocus, onBlur }) => {
     );
 };
 
-const ContactUs = () => {
+const ContactUs = ({ onOpenModal, onClose, isModalOpen }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [isFormFocused, setIsFormFocused] = useState(false);
     const handleFieldFocus = () => setIsFormFocused(true);
@@ -158,7 +158,7 @@ const ContactUs = () => {
                 </div>
             </section>
             <section className="my-10">
-                <Schedule />
+                <Schedule onOpenModal={onOpenModal} onClose={onClose} isModalOpen={isModalOpen} />
             </section>
         </>
     );

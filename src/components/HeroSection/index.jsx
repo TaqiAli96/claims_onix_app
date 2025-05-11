@@ -12,7 +12,8 @@ const HeroSection = ({
   desktopImage = heroDesktop,
   mobileImage = heroMobile,
   dashboardImageSrc = dashboardImage,
-  onOpenModal
+  onOpenModal,
+  onOpenScheduleModal
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +45,7 @@ const HeroSection = ({
       <Navbar onOpenModal={onOpenModal} />
 
       <div className={`mt-20 transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-        <HeroSectionContent onOpenModal={onOpenModal} />
+        <HeroSectionContent onOpenModal={onOpenScheduleModal} />
       </div>
 
       <div className="flex justify-center px-4 sm:px-6 md:px-0 pt-20">

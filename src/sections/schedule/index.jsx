@@ -5,17 +5,8 @@ import ActionButton from "../../components/actionButton";
 import RightArrow from '../../assets/svgs/rightArrow';
 import ScheduleModal from '../../components/ScheduleModal';
 
-const Schedule = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+const Schedule = ({ onOpenModal, onClose, isModalOpen }) => {
     const [isVisible, setIsVisible] = useState(false);
-
-    const handleScheduleClick = () => {
-        setIsModalOpen(true);
-    };
-
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
-    };
 
     useEffect(() => {
         const timer = setTimeout(() => setIsVisible(true), 100);
@@ -68,7 +59,7 @@ const Schedule = () => {
                                 content="Schedule a Call"
                                 className="w-content sm:w-auto "
                                 Icon={<RightArrow />}
-                                onClick={handleScheduleClick}
+                                onClick={onOpenModal}
                                 aria-label="Schedule a consultation call"
                             />
                             <p
@@ -84,7 +75,7 @@ const Schedule = () => {
 
             <ScheduleModal
                 isOpen={isModalOpen}
-                onClose={handleCloseModal}
+                onClose={onClose}
             />
 
             <style>{`

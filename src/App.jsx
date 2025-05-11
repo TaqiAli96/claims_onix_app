@@ -4,7 +4,6 @@ import TopBar from "./components/topBar";
 import faqItems from './constants/faqs';
 import Footer from './sections/footer';
 import HeroSection from "./components/HeroSection";
-import CertificationSection from "./components/certificationSection";
 import AboutUs from "./sections/aboutUs";
 import ClaimOnix from "./sections/claimOnix";
 import Services from "./sections/services";
@@ -17,13 +16,22 @@ import ContactForm from './components/ContactForm';
 import { Element } from 'react-scroll';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+
+  const handleOpenScheduleModal = () => {
+    setIsScheduleModalOpen(true);
+  };
+
+  const handleCloseScheduleModal = () => {
+    setIsScheduleModalOpen(false);
   };
 
   return (
@@ -39,7 +47,7 @@ function App() {
         <TopBar />
 
         <Element name="home">
-          <HeroSection onOpenModal={handleOpenModal} />
+          <HeroSection onOpenModal={handleOpenModal} onOpenScheduleModal={handleOpenScheduleModal} />
         </Element>
 
 
@@ -56,12 +64,12 @@ function App() {
         </Element>
 
         <Element name="contact">
-          <section><ContactUs /></section>
+          <section><ContactUs onOpenModal={handleOpenScheduleModal} onClose={handleCloseScheduleModal} isModalOpen={isScheduleModalOpen} /></section>
         </Element>
 
         <Element name="faqs">
-          <section>   
-          <Accordion items={faqItems} /></section>
+          <section>
+            <Accordion items={faqItems} /></section>
         </Element>
 
 
