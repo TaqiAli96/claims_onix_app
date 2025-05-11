@@ -18,12 +18,13 @@ const AccordionItem = ({ title, content, isOpen, onToggle, id }) => {
 
     return (
         <div
-            className={`mb-3 rounded-xl shadow-sm transition-all duration-500 ease-in-out transform hover:scale-[1.01] ${isOpen ? 'bg-[#F6FFF0] border-[#296600]' : 'bg-white border-transparent'
+
+            className={`mb-3 cursor-pointer rounded-xl shadow-sm transition-all duration-500 ease-in-out transform hover:scale-[1.01] ${isOpen ? 'bg-[#F6FFF0] border-[#296600]' : 'bg-white border-transparent'
                 } border`}
         >
             <h3>
                 <button
-                    className={`flex w-full text-lg font-inter-400 items-center justify-between px-4 sm:px-6 py-5 text-left font-inter-500 text-lg transition-all duration-300 rounded-xl focus:outline-none ${isOpen
+                    className={`flex w-full ursor-pointer text-lg font-inter-400 items-center justify-between px-4 sm:px-6 py-5 text-left font-inter-500 text-lg transition-all duration-300 rounded-xl focus:outline-none ${isOpen
                         ? 'text-[#296600] bg-[#E6FFD4]'
                         : 'text-[#2E2E1F] hover:bg-[#F6FFF0]'
                         }`}
@@ -83,7 +84,7 @@ const Accordion = ({ items }) => {
 
     return (
         <div
-            className={`w-full max-w-full px-2 py-5 sm:px-4 md:px-8 lg:px-16 transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`w-full  max-w-full px-2 py-5 sm:px-4 md:px-8 lg:px-16 transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             role="region"
             aria-label="Accordion"
@@ -100,11 +101,13 @@ const Accordion = ({ items }) => {
             {items.map((item, index) => (
                 <div
                     key={index}
+                    className='cursor-pointer'
                     style={{
                         transitionDelay: `${index * 0.1}s`,
                         opacity: isVisible ? 1 : 0,
                         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                        transition: 'all 0.5s ease-out'
+                        transition: 'all 0.5s ease-out',
+                        cursor: 'pointer'
                     }}
                 >
                     <AccordionItem

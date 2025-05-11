@@ -24,7 +24,7 @@ const FloatingLabelInput = ({ label, type = "text", onFocus, onBlur }) => {
                 onChange={(e) => setValue(e.target.value)}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className="w-full px-4 py-3 border border-gray-300  rounded-lg focus:outline-none focus:border-[#276100] transition-colors duration-200"
+                className="w-full cursor-pointer px-4 py-3 border border-gray-300  rounded-lg focus:outline-none focus:border-[#276100] transition-colors duration-200"
                 placeholder=" "
             />
             <label
@@ -57,7 +57,7 @@ const FloatingLabelTextarea = ({ label, onFocus, onBlur }) => {
                 onChange={(e) => setValue(e.target.value)}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className="w-full px-4 py-3 border border-gray-300  rounded-lg focus:outline-none focus:border-[#276100] transition-colors duration-200 min-h-[120px]"
+                className="w-full px-4 cursor-pointer py-3 border border-gray-300  rounded-lg focus:outline-none focus:border-[#276100] transition-colors duration-200 min-h-[120px]"
                 placeholder=" "
             />
             <label
@@ -119,7 +119,7 @@ const ContactUs = ({ onOpenModal, onClose, isModalOpen }) => {
                             <FloatingLabelTextarea label="Write your message" onFocus={handleFieldFocus} onBlur={handleFieldBlur} />
                         </div>
                         <div className={`flex justify-start mt-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.8s' }}>
-                            <button type="submit" className="bg-[#276100] hover:bg-[#348000] text-white font-inter-400 rounded-xl px-10 py-3 text-lg transition-all duration-200 shadow-md hover:scale-105 focus:scale-105">
+                            <button type="submit" className="bg-[#276100] cursor-pointer hover:bg-[#348000] text-white font-inter-400 rounded-xl px-10 py-3 text-lg transition-all duration-200 shadow-md hover:scale-105 focus:scale-105">
                                 Submit
                             </button>
                         </div>

@@ -47,7 +47,7 @@ const Navbar = ({ onOpenModal }) => {
             />
           </div>
 
-          <div className="hide-on-mobile-950 flex items-center justify-center space-x-6 flex-1">
+          <div className="hide-on-mobile-950 flex items-center justify-center space-x-6 flex-1 cursor-pointer">
             {navigationItems?.map((item, index) => (
               <Link
                 key={item.to}

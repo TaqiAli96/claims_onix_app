@@ -6,7 +6,7 @@ const ActionButton = ({ className, content, Icon, onClick }) => {
     <button
       type="button"
       onClick={onClick}
-      className={`${className} text-white bg-[#276100] hover:bg-[#348000] font-normal text-base font-inter-300 rounded-[100px] px-5 py-2.5 text-center inline-flex gap-2 items-center`}
+      className={`${className} cursor-pointer text-white bg-[#276100] hover:bg-[#348000] font-normal text-base font-inter-300 rounded-[100px] px-5 py-2.5 text-center inline-flex gap-2 items-center`}
     >
       {content || ""}
       {Icon && Icon}
