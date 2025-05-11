@@ -5,9 +5,9 @@ import Chip from "../chip";
 
 const SectionHeading = ({ title }) => {
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col md:flex-col lg:flex-row items-center gap-2">
             <LeftLine />
-            <Chip Icon={<ChipStar />} content={title} className="md:px-5 py-1" />
+            <Chip Icon={<ChipStar />} content={title} className="md:px-5 p-8 py-1" />
             <RightLine />
         </div>
     )

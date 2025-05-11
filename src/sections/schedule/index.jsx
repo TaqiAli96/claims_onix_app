@@ -60,13 +60,13 @@ const Schedule = () => {
                             Schedule a free consultation with our RCM experts. We'll analyze your current processes and provide a customized solution to optimize your revenue cycle.
                         </p>
                         <div
-                            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                            className="flex flex-col lg:flex-row  gap-4 justify-center items-center"
                             role="group"
                             aria-label="Call to action"
                         >
                             <ActionButton
                                 content="Schedule a Call"
-                                className="w-full sm:w-auto"
+                                className="w-content sm:w-auto "
                                 Icon={<RightArrow />}
                                 onClick={handleScheduleClick}
                                 aria-label="Schedule a consultation call"

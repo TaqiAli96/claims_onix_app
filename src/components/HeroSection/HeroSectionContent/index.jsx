@@ -16,26 +16,31 @@ const HeroSectionContent = ({ onOpenModal }) => {
       aria-label="Hero Section"
     >
       <header
-        className="flex gap-2 text-[11px] sm:text-sm font-inter-300 bg-white rounded-full px-4 py-2 items-center border border-black/4"
+        className="flex flex-row gap-2 text-[11px] sm:text-sm font-inter-300 bg-white rounded-full px-4 py-2 items-center border border-black/4"
         style={{
           animation: isVisible ? 'fadeInUp 0.8s ease-out forwards' : 'none',
           animationDelay: '200ms',
           opacity: 0
         }}
       >
-        <span
-          aria-hidden="true"
-          style={{
-            animation: 'bounce 2s infinite',
-            display: 'inline-block'
-          }}
-        >
-          <StarIcon />
-        </span>
-        <span className="text-[#3E9900] font-semibold" aria-label="Trusted">
-          Trusted
-        </span>
-        <span>Best Billing Company in US</span>
+
+        <div className="flex md:gap-2 flex-col md:flex-row items-center">
+          <div className="flex items-center">
+            <span
+              aria-hidden="true"
+              style={{
+                animation: 'bounce 2s infinite',
+                display: 'inline-block'
+              }}
+            >
+              <StarIcon />
+            </span>
+            <span className="text-[#3E9900] font-semibold" aria-label="Trusted">
+              Trusted
+            </span>
+          </div>
+          <span>Best Billing Company in US</span>
+        </div>
       </header>
 
       <h1
@@ -72,6 +77,7 @@ const HeroSectionContent = ({ onOpenModal }) => {
           content={"Book Your Free Discovery Call"}
           aria-label="Book a free discovery call with ClaimsOnix"
           onClick={onOpenModal}
+          className={"text-sm md:text-lg"}
         />
       </div>
 

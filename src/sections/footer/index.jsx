@@ -2,6 +2,7 @@ import React from 'react';
 import navigationItems from '../../constants/navitems';
 import socialLinks from '../../constants/socialIcons';
 import AppLogo from '../../assets/pngs/AppLogo.png';
+import { Link } from 'react-scroll';
 
 
 
@@ -33,13 +34,15 @@ const Footer = () => (
             {/* Navigation */}
             <nav className="flex flex-col md:flex-row flex-wrap justify-center gap-5 md:gap-6 text-sm md:text-sm lg:text-base font-inter-400">
                 {navigationItems.map((item, i) => (
-                    <a
-                        key={i}
-                        href="#"
+                    <Link
+                        key={item.to}
+                        to={item.to}
+                        smooth={true}
+                        duration={500}
                         className="hover:text-[#276100] transition-all duration-300 transform hover:-translate-y-1"
                     >
                         {item.name}
-                    </a>
+                    </Link>
                 ))}
             </nav>
             {/* Social Icons */}

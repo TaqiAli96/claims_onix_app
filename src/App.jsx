@@ -60,7 +60,8 @@ function App() {
         </Element>
 
         <Element name="faqs">
-          <section>   <Accordion items={faqItems} /></section>
+          <section>   
+          <Accordion items={faqItems} /></section>
         </Element>
 
 
