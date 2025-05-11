@@ -12,8 +12,21 @@ import Schedule from "./sections/schedule";
 import Accordion from "./components/accordion";
 import ContactUs from "./sections/contactUS";
 import WrapperContainer from "./components/WrapperContainer";
+import Modal from "./components/Modal";
+import { useState } from "react";
+import ContactForm from './components/ContactForm';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <WrapperContainer>
       <Helmet>
@@ -25,7 +38,7 @@ function App() {
 
       <Container>
         <TopBar />
-        <HeroSection />
+        <HeroSection onOpenModal={handleOpenModal} />
 
         <section className="my-5">
           <CertificationSection />
@@ -57,6 +70,16 @@ function App() {
           <Footer />
         </section>
       </Container>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title="Let’s Talk Revenue Results"
+        description="Whether you’re ready to start or just exploring, we’re here to answer your questions."
+      >
+
+        <ContactForm />
+      </Modal>
     </WrapperContainer>
   );
 }

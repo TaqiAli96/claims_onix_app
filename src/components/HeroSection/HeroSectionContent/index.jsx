@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import StarIcon from "../../../assets/svgs/starIcon";
 import ActionButton from "../../actionButton";
+import PropTypes from "prop-types";
 
-const HeroSectionContent = () => {
+const HeroSectionContent = ({ onOpenModal }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const HeroSectionContent = () => {
 
   return (
     <section
-      className="flex flex-col mx-4 lg:mx-40 justify-center items-center text-center gap-6 px-4 sm:px-6 md:px-0 mb-16 md:mb-24 lg:mb-32"
+      className="flex  flex-col mx-4 lg:mx-40 justify-center items-center text-center gap-6 px-4 sm:px-6 md:px-0 mb-16 md:mb-24 lg:mb-32"
       aria-label="Hero Section"
     >
       <header
@@ -70,6 +71,7 @@ const HeroSectionContent = () => {
         <ActionButton
           content={"Book Your Free Discovery Call"}
           aria-label="Book a free discovery call with ClaimsOnix"
+          onClick={onOpenModal}
         />
       </div>
 
@@ -109,6 +111,10 @@ const HeroSectionContent = () => {
       </style>
     </section>
   );
+};
+
+HeroSectionContent.propTypes = {
+  onOpenModal: PropTypes.func.isRequired
 };
 
 export default React.memo(HeroSectionContent);

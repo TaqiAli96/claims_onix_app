@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import scheduleSectionBgImg from "../../assets/pngs/scheduleSectionBg.png";
 import ActionButton from "../../components/actionButton";
 import RightArrow from '../../assets/svgs/rightArrow';
+import ScheduleModal from '../../components/ScheduleModal';
 
 const Schedule = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
     const handleScheduleClick = () => {
-        // Add analytics tracking or other click handling logic here
-        console.log('Schedule button clicked');
+        setIsModalOpen(true);
     };
 
-    const [isVisible, setIsVisible] = useState(false);
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
+
     useEffect(() => {
         const timer = setTimeout(() => setIsVisible(true), 100);
         return () => clearTimeout(timer);
@@ -76,6 +81,11 @@ const Schedule = () => {
                     </div>
                 </div>
             </section>
+
+            <ScheduleModal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+            />
 
             <style>{`
                 @keyframes fadeInUp {

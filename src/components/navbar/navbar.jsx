@@ -6,7 +6,7 @@ import HamburgerIcon from "../../assets/svgs/hamburgerIcon";
 import AppLogo from "../../assets/pngs/AppLogo.png";
 import MobileNavbar from "./mobNavBar";
 
-const Navbar = () => {
+const Navbar = ({ onOpenModal }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -74,7 +74,7 @@ const Navbar = () => {
               opacity: 0
             }}
           >
-            <ActionButton content={"Contact Us"} Icon={<RightArrow />} />
+            <ActionButton content={"Contact Us"} Icon={<RightArrow />} onClick={onOpenModal} />
           </div>
 
           <div

@@ -11,7 +11,8 @@ const MOBILE_SCREEN_WIDTH = 950;
 const HeroSection = ({
   desktopImage = heroDesktop,
   mobileImage = heroMobile,
-  dashboardImageSrc = dashboardImage
+  dashboardImageSrc = dashboardImage,
+  onOpenModal
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -38,10 +39,10 @@ const HeroSection = ({
       role="banner"
       aria-label="Hero section"
     >
-      <Navbar />
+      <Navbar onOpenModal={onOpenModal} />
 
       <div className={`mt-20 transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-        <HeroSectionContent />
+        <HeroSectionContent onOpenModal={onOpenModal} />
       </div>
 
       <div className="flex justify-center px-4 sm:px-6 md:px-0 pt-20">
@@ -62,7 +63,8 @@ const HeroSection = ({
 HeroSection.propTypes = {
   desktopImage: PropTypes.string,
   mobileImage: PropTypes.string,
-  dashboardImageSrc: PropTypes.string
+  dashboardImageSrc: PropTypes.string,
+  onOpenModal: PropTypes.func.isRequired
 };
 
 export default React.memo(HeroSection);

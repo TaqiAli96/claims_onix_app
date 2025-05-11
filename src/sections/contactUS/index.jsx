@@ -1,59 +1,70 @@
 import SectionHeading from '../../components/sectionHeading';
 import React, { useEffect, useState } from 'react';
 
-const FloatingLabelInput = ({ label, type = 'text', onFocus, onBlur }) => {
+const FloatingLabelInput = ({ label, type = "text", onFocus, onBlur }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState('');
+
+    const handleFocus = (e) => {
+        setIsFocused(true);
+        onFocus?.(e);
+    };
+
+    const handleBlur = (e) => {
+        setIsFocused(false);
+        onBlur?.(e);
+    };
+
     return (
-        <div className="relative w-full">
+        <div className="relative">
             <input
                 type={type}
                 value={value}
-                onChange={e => setValue(e.target.value)}
-                onFocus={e => { setIsFocused(true); onFocus && onFocus(e); }}
-                onBlur={e => { setIsFocused(false); onBlur && onBlur(e); }}
-                placeholder=""
-                className="peer border border-gray-300 rounded-lg px-4 py-2 w-full bg-white focus:outline-none focus:border-[#276100] transition-all duration-300 hover:shadow-md focus:shadow-lg focus:scale-[1.03]"
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                className="w-full px-4 py-3 border border-gray-300  rounded-lg focus:outline-none focus:border-[#276100] transition-colors duration-200"
+                placeholder=" "
             />
             <label
-                className={
-                    `absolute left-4 bg-white px-1 pointer-events-none font-inter-400 transition-all duration-300
-                    ${isFocused || value
-                        ? 'text-xs text-[#276100] top-0 -translate-y-1/2 scale-90 font-inter-500 shadow-md'
-                        : 'text-base text-gray-400 top-1/2 -translate-y-1/2'}
-                    `
-                }
-                style={{ transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)' }}
+                className={`absolute left-4 transition-all duration-200 pointer-events-none ${isFocused || value ? '-top-2 text-sm bg-white px-1 text-[#276100]' : 'top-3 text-gray-500'
+                    }`}
             >
                 {label}
             </label>
         </div>
     );
 };
-
 const FloatingLabelTextarea = ({ label, onFocus, onBlur }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState('');
-    const showPlaceholder = !isFocused && !value;
+
+    const handleFocus = (e) => {
+        setIsFocused(true);
+        onFocus?.(e);
+    };
+
+    const handleBlur = (e) => {
+        setIsFocused(false);
+        onBlur?.(e);
+    };
+
     return (
-        <div className="relative w-full transition-all duration-500">
+        <div className="relative">
             <textarea
                 value={value}
-                onChange={e => setValue(e.target.value)}
-                onFocus={e => { setIsFocused(true); onFocus && onFocus(e); }}
-                onBlur={e => { setIsFocused(false); onBlur && onBlur(e); }}
-                placeholder={showPlaceholder ? label : ''}
-                className={`peer border border-gray-300 rounded-lg px-4 py-3 w-full min-h-[120px] bg-white focus:outline-none focus:border-[#276100] resize-y transition-all duration-300 hover:shadow-md focus:shadow-lg focus:scale-[1.02] ${showPlaceholder ? 'placeholder-gray-400' : ''}`}
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                className="w-full px-4 py-3 border border-gray-300  rounded-lg focus:outline-none focus:border-[#276100] transition-colors duration-200 min-h-[120px]"
+                placeholder=" "
             />
-            {/* Label floats only when focused or has value, otherwise hidden */}
-            {(isFocused || value) && (
-                <label
-                    className={`absolute left-4 top-0 px-1 bg-white text-xs text-[#276100] scale-90 font-inter-500 shadow-md transition-all duration-300 pointer-events-none`}
-                    style={{ transform: 'translateY(-50%)', transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)', transitionDelay: '0.2s' }}
-                >
-                    {label}
-                </label>
-            )}
+            <label
+                className={`absolute left-4 transition-all duration-200 pointer-events-none ${isFocused || value ? '-top-2 text-sm bg-white px-1 text-[#276100]' : 'top-3 text-gray-500'
+                    }`}
+            >
+                {label}
+            </label>
         </div>
     );
 };
