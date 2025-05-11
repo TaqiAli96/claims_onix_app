@@ -3,6 +3,7 @@ import Card from "../../components/card";
 import SectionHeading from "../../components/sectionHeading";
 import claimonixDetails from "../../constants/claimonixDetails";
 import { Helmet } from 'react-helmet';
+import AppLogo from "../../assets/pngs/AppLogo.png";
 
 // Animation utility for staggered fade-in
 const fadeInUp = (index) => ({
@@ -13,10 +14,6 @@ const fadeInUp = (index) => ({
 const ClaimOnix = () => {
     return (
         <section className="flex flex-col gap-2 w-full items-center py-10  overflow-x-hidden">
-            <Helmet>
-                <title>Why ClaimsOnix - Full-cycle RCM Solution</title>
-                <meta name="description" content="ClaimsOnix offers comprehensive Revenue Cycle Management solutions. Not just another billing service, but a full-cycle RCM partner." />
-            </Helmet>
 
             <SectionHeading title={'Why ClaimsOnix?'} />
             <h1

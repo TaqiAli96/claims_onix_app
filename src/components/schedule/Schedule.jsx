@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import scheduleSectionBgImg from "../../assets/pngs/scheduleSectionBg.png";
-import ActionButton from "../../components/actionButton";
 import RightArrow from '../../assets/svgs/rightArrow';
-import ScheduleModal from '../../components/ScheduleModal';
+import ActionButton from '../actionButton';
+import ScheduleModal from '../ScheduleModal';
 
 const Schedule = ({ onOpenModal, onClose, isModalOpen }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -15,17 +14,6 @@ const Schedule = ({ onOpenModal, onClose, isModalOpen }) => {
 
     return (
         <>
-            <Helmet>
-                <title>Schedule a Consultation - ClaimsOnix RCM Solutions</title>
-                <meta
-                    name="description"
-                    content="Schedule a free 30-minute consultation with our RCM experts. Get a customized revenue cycle management solution for your healthcare practice."
-                />
-                <meta
-                    name="keywords"
-                    content="RCM consultation, revenue cycle management, healthcare billing, medical billing consultation"
-                />
-            </Helmet>
 
             <section
                 className="relative w-[80%] mx-auto py-16 md:py-24 bg-cover bg-center bg-no-repeat"

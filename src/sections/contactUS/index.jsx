@@ -1,6 +1,6 @@
+import Schedule from '../../components/schedule/Schedule';
 import SectionHeading from '../../components/sectionHeading';
 import React, { useEffect, useState } from 'react';
-import Schedule from '../schedule';
 
 const FloatingLabelInput = ({ label, type = "text", onFocus, onBlur }) => {
     const [isFocused, setIsFocused] = useState(false);

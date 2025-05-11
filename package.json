@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-   "email": "email dev",
+    "email": "email dev",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -19,6 +19,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-scroll": "^1.9.3"
   },
   "devDependencies": {
