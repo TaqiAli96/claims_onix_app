@@ -79,7 +79,7 @@ function App() {
         description="Whether you’re ready to start or just exploring, we’re here to answer your questions."
       >
 
-        <ContactForm />
+        <ContactForm onClose={handleCloseModal} />
       </Modal>
     </WrapperContainer>
   );

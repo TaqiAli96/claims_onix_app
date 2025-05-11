@@ -70,7 +70,7 @@ const FloatingLabelTextarea = ({ label, onFocus, onBlur }) => {
     );
 };
 
-const ContactForm = ({ onSubmit, className = '' }) => {
+const ContactForm = ({ onSubmit, className = '', onClose }) => {
     const [isFormFocused, setIsFormFocused] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
 
@@ -137,6 +137,7 @@ const ContactForm = ({ onSubmit, className = '' }) => {
                 </button>
                 <button
                     type="submit"
+                    onClick={onClose}
                     className="bg-red-600 hover:bg-red-700 text-white font-inter-400 rounded-xl px-10 py-3 text-lg transition-all duration-200 shadow-md hover:scale-105 focus:scale-105"
                 >
                     Cancel
@@ -148,7 +149,8 @@ const ContactForm = ({ onSubmit, className = '' }) => {
 
 ContactForm.propTypes = {
     onSubmit: PropTypes.func,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onClose: PropTypes.func
 };
 
 FloatingLabelInput.propTypes = {
