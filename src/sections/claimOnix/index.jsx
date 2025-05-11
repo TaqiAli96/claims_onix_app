@@ -2,8 +2,7 @@ import IconContainer from "../../components/iconContainer";
 import Card from "../../components/card";
 import SectionHeading from "../../components/sectionHeading";
 import claimonixDetails from "../../constants/claimonixDetails";
-import { Helmet } from 'react-helmet';
-import AppLogo from "../../assets/pngs/AppLogo.png";
+
 
 // Animation utility for staggered fade-in
 const fadeInUp = (index) => ({
